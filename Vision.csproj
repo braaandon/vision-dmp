@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{23673180-29DF-4DA0-AE88-91817BBF0200}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VisionDevelopment</RootNamespace>
+    <AssemblyName>Vision</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Vision.ico</ApplicationIcon>
+    <StartupObject>Vision_Client.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscordRPC" />
+    <Reference Include="Guna.UI2" />
+    <Reference Include="MongoDB.Bson" />
+    <Reference Include="MongoDB.Driver" />
+    <Reference Include="MongoDB.Driver.Core" />
+    <Reference Include="MProcess" />
+    <Reference Include="NetLimiter">
+      <HintPath>..\..\..\Desktop\limiter\NetLimiter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json" />
+    <Reference Include="System">
+      <HintPath>..\..\..\Desktop\dnSpy\bin\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\Desktop\dnSpy\bin\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="CountDownTimer.cs" />
+    <Compile Include="Discord.cs" />
+    <Compile Include="KeyAuth\api.cs" />
+    <Compile Include="KeyAuth\encryption.cs" />
+    <Compile Include="KeyAuth\json_wrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stealing.cs" />
+    <Compile Include="Vision_Client\AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\BruceVision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\BruceVision.Designer.cs">
+      <DependentUpon>BruceVision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\discord\Account.cs" />
+    <Compile Include="Vision_Client\discord\Role.cs" />
+    <Compile Include="Vision_Client\limiter\D2Filter.cs" />
+    <Compile Include="Vision_Client\limiter\HotKeyEventArgs.cs" />
+    <Compile Include="Vision_Client\limiter\HotKeyManager.cs" />
+    <Compile Include="Vision_Client\limiter\KeyModifiers.cs" />
+    <Compile Include="Vision_Client\limiter\NLConfig.cs" />
+    <Compile Include="Vision_Client\limiter\Overlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\limiter\Overlay.Designer.cs">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\limiter\Util.cs" />
+    <Compile Include="Vision_Client\options\ModuleInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\options\ModuleInformation.Designer.cs">
+      <DependentUpon>ModuleInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\options\ModuleOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\options\ModuleOption.Designer.cs">
+      <DependentUpon>ModuleOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\Program.cs" />
+    <Compile Include="Vision_Client\Properties\Resources.cs" />
+    <Compile Include="Vision_Client\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Vision_Client\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\splash\MainSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\splash\MainSplash.Designer.cs">
+      <DependentUpon>MainSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\splash\VisionSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\splash\VisionSplash.Designer.cs">
+      <DependentUpon>VisionSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\StartupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\StartupForm.Designer.cs">
+      <DependentUpon>StartupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\ThemeSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\ThemeSelector.Designer.cs">
+      <DependentUpon>ThemeSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\UserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\UserLogin.Designer.cs">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\UserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\UserRegister.Designer.cs">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\Vision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\Vision.Designer.cs">
+      <DependentUpon>Vision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vision_Client\WoofSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vision_Client\WoofSplash.Designer.cs">
+      <DependentUpon>WoofSplash.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vision_Client\AdminPanel.resources" />
+    <EmbeddedResource Include="Vision_Client\BruceVision.resources" />
+    <EmbeddedResource Include="Vision_Client\limiter\Overlay.resources" />
+    <EmbeddedResource Include="Vision_Client\options\ModuleInformation.resources" />
+    <EmbeddedResource Include="Vision_Client\options\ModuleOption.resources" />
+    <EmbeddedResource Include="Vision_Client\Properties\Resources.resources" />
+    <EmbeddedResource Include="Vision_Client\Settings.resources" />
+    <EmbeddedResource Include="Vision_Client\splash\MainSplash.resources" />
+    <EmbeddedResource Include="Vision_Client\splash\VisionSplash.resources" />
+    <EmbeddedResource Include="Vision_Client\StartupForm.resources" />
+    <EmbeddedResource Include="Vision_Client\ThemeSelector.resources" />
+    <EmbeddedResource Include="Vision_Client\UserLogin.resources" />
+    <EmbeddedResource Include="Vision_Client\UserRegister.resources" />
+    <EmbeddedResource Include="Vision_Client\Vision.resources" />
+    <EmbeddedResource Include="Vision_Client\WoofSplash.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Vision_Client\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
